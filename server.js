@@ -24,16 +24,7 @@ app.set('layout', 'layouts/main_layout.ejs');
 app.use(express.static('public'))
  
 // mongoose
-const mongoose = require('mongoose');
-const Blog = require('./server/models/blog_mongoose.js');
-
-// mongoose
-main().catch(err => console.log((err).bgRed));
-async function main() {
-  await mongoose.connect(process.env.mongoDB_url);    
-}
-console.log(Blog)
-
+require('./server/mongoose_controller.js');
 
 // 🍀🍀🍀app.get
 app.get("/", function (req, res) {
