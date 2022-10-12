@@ -23,7 +23,14 @@ app.set('layout', 'layouts/main_layout.ejs');
 // c50) static
 app.use(express.static('public'))
  
- 
+// mongoose
+const mongoose = require('mongoose');
+main().catch(err => console.log((err).bgRed));
+
+async function main() {
+  await mongoose.connect(process.env.mongoDB_url);  
+  // use `await mongoose.connect('mongodb://user:password@localhost:27017/test');` if your database has auth enabled
+}
 
 
 app.get("/", function (req, res) {
