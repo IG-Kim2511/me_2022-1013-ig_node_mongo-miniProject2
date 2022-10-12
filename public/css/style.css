@@ -51,7 +51,7 @@
   /* Universal tags */
   * {
     box-sizing: border-box;
-    text-align: center;
+    /* text-align: center; */
   }
   
   body {
