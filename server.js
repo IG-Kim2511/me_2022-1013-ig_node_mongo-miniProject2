@@ -22,8 +22,8 @@ app.set('layout', 'layouts/layout');
 
 // c50) static
 app.use(express.static('public'))
-
-
+ 
+ 
 
 
 app.get("/", function (req, res) {
