@@ -25,14 +25,17 @@ app.use(express.static('public'))
  
 // mongoose
 const mongoose = require('mongoose');
+const Blog = require('./server/models/blog_mongoose.js');
+
+// mongoose
 main().catch(err => console.log((err).bgRed));
-
 async function main() {
-  await mongoose.connect(process.env.mongoDB_url);  
-  // use `await mongoose.connect('mongodb://user:password@localhost:27017/test');` if your database has auth enabled
+  await mongoose.connect(process.env.mongoDB_url);    
 }
+console.log(Blog)
 
 
+// 🍀🍀🍀app.get
 app.get("/", function (req, res) {
     res.render('index.ejs')  
 });
